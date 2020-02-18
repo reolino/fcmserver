@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.gcamp.fcmserver.mapper.PushMapper">
+    
+    <select id="selectPushList" resultType="com.gcamp.fcmserver.domain.PushVO">
+        SELECT DEVICE_TOKEN, TITLE, BODY, DEVICE_OS
+        FROM (
+		        SELECT 
+		        	'edZx1xouY8U:APA91bGXwuWyltAq2AXGfGYOnqkd9B2s5JFYmsCndjPFdE3ReBOzqyY3pXslRlBeaMQ-xLpGDcw0AVO5DmCqLfFi0t5A62jE3U_udaYCRahh6lHLDhE9tOUeYAKrmrxT7HCE2bhPYBQo' AS DEVICE_TOKEN
+		        	,'title1' AS TITLE
+		        	,'body1' AS BODY
+		        	,'Android' AS DEVICE_OS
+		        FROM DUAL
+		        UNION ALL
+		        SELECT 
+		        	'edZx1xouY8U:APA91bGXwuWyltAq2AXGfGYOnqkd9B2s5JFYmsCndjPFdE3ReBOzqyY3pXslRlBeaMQ-xLpGDcw0AVO5DmCqLfFi0t5A62jE3U_udaYCRahh6lHLDhE9tOUeYAKrmrxT7HCE2bhPYBQo' AS DEVICE_TOKEN
+		        	,'title2' AS TITLE
+		        	,'body2' AS BODY
+		        	,'Android' AS DEVICE_OS
+		        FROM DUAL
+		        UNION ALL
+		        SELECT
+		        	'' AS DEVICE_TOKEN 
+		        	,'title3' AS TITLE
+		        	,'body3' AS BODY
+		        	,'IOS' AS DEVICE_OS
+		        FROM DUAL
+		        UNION ALL
+		        SELECT 
+		        	'' AS DEVICE_TOKEN 
+		        	,'title4' AS TITLE
+		        	,'body4' AS BODY
+		        	,'IOS' AS DEVICE_OS
+		        FROM DUAL
+        )
+    </select>
+
+</mapper>
+
+
