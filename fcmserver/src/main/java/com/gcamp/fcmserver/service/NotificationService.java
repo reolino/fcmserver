@@ -39,7 +39,7 @@ public class NotificationService {
     		PushVO pushVo = pushList.get(i);
     		String device_os = pushVo.getDevice_os();
     		if("IOS".equals(device_os)) {
-    			//IosPushNotification(pushVo);
+    			IosPushNotification(pushVo);
     		}else {
     			AndroidPushNotification(pushVo);
     		}
@@ -56,13 +56,6 @@ public class NotificationService {
         try{
             String firebaseResponse = pushNotification.get();
             JsonObject jsonObject = new JsonParser().parse(firebaseResponse).getAsJsonObject();
-            String v_success_yn = "Y";
-            String v_success = jsonObject.get("success").toString();
-            
-            if("0".equals(v_success)) {
-            	v_success_yn = "N";
-            }
-        	//전송 이후 푸시 테이블에서 삭제하고 푸시 로그 테이블에 결과를 입력한다.
         }
         catch (InterruptedException e){
             logger.debug("got interrupted!");
@@ -79,7 +72,6 @@ public class NotificationService {
     	 try {
     		 iosPushNotificationsService.send(pushVo);
  		} catch (Exception e) {
- 			// TODO Auto-generated catch block
  			e.printStackTrace();
  		}
     }

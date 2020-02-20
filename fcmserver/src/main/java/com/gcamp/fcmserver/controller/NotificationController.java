@@ -17,7 +17,7 @@ public class NotificationController {
 	
     Logger logger = LoggerFactory.getLogger(this.getClass());
     
-    @Scheduled(fixedRate = 30000) //20초
+    @Scheduled(fixedRate = 30000) //30초
     @GetMapping(value = "/push/excute")
 	public void pushExcute() throws Exception { 
 		notificationService.pushExcute(); 

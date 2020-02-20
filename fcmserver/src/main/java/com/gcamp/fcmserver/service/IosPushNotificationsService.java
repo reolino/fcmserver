@@ -10,9 +10,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import org.json.JSONObject;
 
-/*
- *  IOS의 FCM 발송을 구현 
- */
 @Service
 public class IosPushNotificationsService {
 
@@ -51,7 +48,6 @@ public class IosPushNotificationsService {
                 (conn.getInputStream())));
 
         String output;
-        System.out.println("Output from Server .... \n");
         while ((output = br.readLine()) != null) {
             System.out.println(output);
         }
