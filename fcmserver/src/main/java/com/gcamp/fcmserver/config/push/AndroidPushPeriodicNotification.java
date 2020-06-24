@@ -6,15 +6,15 @@ import org.json.JSONObject;
 import com.gcamp.fcmserver.domain.PushVO;
 
 /*
- *  PUSH의 형태를 정의한다 
+ *  Define push
  */
 public class AndroidPushPeriodicNotification {
 	public static String PeriodicNotificationJson(PushVO pushVo) throws JSONException {
         
-		//단일 발송
-		JSONObject body = new JSONObject();
+	//single send
+	JSONObject body = new JSONObject();
         
-		String device_token = pushVo.getDevice_token();
+	String device_token = pushVo.getDevice_token();
         body.put("to", device_token);
         
         JSONObject notification = new JSONObject();
@@ -22,7 +22,7 @@ public class AndroidPushPeriodicNotification {
         notification.put("body",pushVo.getBody());
         body.put("notification", notification);
 		
-		//복수 발송(같은 메세지를 발송해야 하는 경우 아래 구문을 사용하세요)
+	//multi send
         /*
         String device_token = pushVo.getDevice_token();
         String sampleData[] = {device_token};
