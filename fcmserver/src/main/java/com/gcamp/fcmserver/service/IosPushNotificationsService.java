@@ -13,7 +13,7 @@ import org.json.JSONObject;
 @Service
 public class IosPushNotificationsService {
 
-	private static final String firebase_server_key="AAAA7o8UF98:APA91bEVK4W6e0ZcsTR8f5dwIU1ATaIKNMgsSMlZEBG1V3e8O_51syTP4OiOvm-W0dXUHNueACwZ2fe3urIGRPj-anvwgaJyz6aTle4flaFoZg8LrpibOYmQObbTxC8ovy3zt9j-DiLb";
+    private static final String firebase_server_key="fcm_server_kye";
     private static final String firebase_api_url="https://fcm.googleapis.com/fcm/send";
 
     public void send(PushVO pushVo) throws Exception {
