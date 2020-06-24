@@ -19,7 +19,7 @@ public class NotificationController {
     
     @Scheduled(fixedRate = 60000) //60 second
     @GetMapping(value = "/push/excute")
-	public void pushExcute() throws Exception { 
-		notificationService.pushExcute(); 
-	}
+    public void pushExcute() throws Exception { 
+       notificationService.pushExcute(); 
+    }
 }
