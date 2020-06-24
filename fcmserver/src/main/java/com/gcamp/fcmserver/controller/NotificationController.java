@@ -11,9 +11,9 @@ import com.gcamp.fcmserver.service.NotificationService;
 
 @RestController
 public class NotificationController {
-
-	@Resource(name="com.gcamp.fcmserver.service.NotificationService")
-	NotificationService notificationService;
+    
+    @Resource(name="com.gcamp.fcmserver.service.NotificationService")
+    NotificationService notificationService;
 	
     Logger logger = LoggerFactory.getLogger(this.getClass());
     
